@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+    mysql:
+        container_name: mirea_backend_course_work_db
+        image: mysql
+        restart: on-failure
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: appDb
+            MYSQL_USER: appUser
+            MYSQL_PASSWORD: password
+        volumes:
+            - ./Database/init/init.sql:/docker-entrypoint-initdb.d/init.sql
+            - database:/var/lib/mysql
+        ports:
+            - '3306:3306'
+    webapp:
+        build: Barbershop/.
+        ports:
+            - '8080:8080'
+        container_name: mirea_backend_course_work_app
+volumes:
+    database:
