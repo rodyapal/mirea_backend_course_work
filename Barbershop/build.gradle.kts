@@ -10,7 +10,7 @@ plugins {
 
 group = "com.rodyapal"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_18
 
 configurations {
 	compileOnly {
@@ -36,7 +36,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.session:spring-session-jdbc")
-	implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
+//	implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.mysql:mysql-connector-j")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
@@ -47,7 +47,7 @@ dependencies {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "17"
+		jvmTarget = "18"
 	}
 }
 
