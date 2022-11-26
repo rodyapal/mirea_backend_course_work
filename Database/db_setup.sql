@@ -2,8 +2,8 @@ CREATE TABLE services (
 	id_service 	INT NOT NULL AUTO_INCREMENT,
 	`name` 		VARCHAR(128) NOT NULL check ( length(name) > 0 ),
 	`description` TEXT NOT NULL check ( length(description) > 0 ),
-	duration 	INT unsigned NOT NULL check ( duration > 0 ),
-	price 		INT unsigned NOT NULL check ( price > 0 ),
+	duration 	INT NOT NULL check ( duration > 0 ),
+	price 		INT NOT NULL check ( price > 0 ),
 	PRIMARY KEY (id_service)
 );
 
