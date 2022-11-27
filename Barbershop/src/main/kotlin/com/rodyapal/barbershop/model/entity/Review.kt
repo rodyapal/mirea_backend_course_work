@@ -7,6 +7,6 @@ interface Review : Entity<Review> {
 	companion object : Entity.Factory<Review>()
 	val id: Int
 	var content: String
-	val creationTime: Timestamp
-	val author: Client
+	var creationTime: Timestamp
+	var author: Client
 }

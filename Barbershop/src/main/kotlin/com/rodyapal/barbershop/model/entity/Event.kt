@@ -8,6 +8,6 @@ interface Event : Entity<Event> {
 	val id: Int
 	var service: Service
 	var barber: Barber
-	val client: Client
+	var client: Client
 	var visitDateTime: Timestamp
 }

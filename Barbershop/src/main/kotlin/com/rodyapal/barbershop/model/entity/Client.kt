@@ -9,5 +9,5 @@ interface Client : Entity<Client> {
 	var email: String
 	var password: String
 	var phoneNumber: String
-	val card: LoyaltyCard
+	val card: LoyaltyCard?
 }

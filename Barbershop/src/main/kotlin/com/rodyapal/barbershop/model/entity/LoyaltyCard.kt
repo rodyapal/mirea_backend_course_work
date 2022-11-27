@@ -5,5 +5,5 @@ import org.ktorm.entity.Entity
 interface LoyaltyCard : Entity<LoyaltyCard> {
 	companion object : Entity.Factory<LoyaltyCard>()
 	val id: Int
-	val discountPercent: Int
+	var discountPercent: Int
 }
