@@ -24,7 +24,7 @@ insert into barbers (name, rating) values ('Agathe Little', 3.6);
 insert into barbers (name, rating) values ('Em Artingstall', 1.47);
 insert into barbers (name, rating) values ('Gillian Freed', 3.38);
 insert into barbers (name, rating) values ('Jeana Grunnill', 3.04);
-insert into barbers (name, rating) values ('Lona O''Docherty', 2.74);
+insert into barbers (name, rating) values ('Lona Docherty', 2.74);
 insert into barbers (name, rating) values ('Kellie Slainey', 3.85);
 insert into barbers (name, rating) values ('Latrena Burrass', 3.5);
 insert into barbers (name, rating) values ('Arliene Rodenhurst', 2.03);

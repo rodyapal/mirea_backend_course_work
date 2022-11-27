@@ -1,3 +1,7 @@
+GRANT ALL ON appDb TO appUser WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+SET GLOBAL log_bin_trust_function_creators=1;
+
 CREATE TABLE services (
 	id_service 	INT NOT NULL AUTO_INCREMENT,
 	`name` 		VARCHAR(128) NOT NULL check ( length(name) > 0 ),
