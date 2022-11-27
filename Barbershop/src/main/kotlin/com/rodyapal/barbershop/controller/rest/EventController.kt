@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 import java.sql.Timestamp
 
-@RestController("api/v1")
+@RestController
 class EventController(
 	private val eventDao: EventDao,
 	private val clientDao: ClientDao,
 	private val barberDao: BarberDao,
 	private val serviceDao: ServiceDao
 ) {
-	@GetMapping("/event")
+	@GetMapping("/api/v1/event")
 	fun getEvent(
 		@RequestParam(required = false) id: Int?,
 		@RequestParam(required = false) barberId: Int?,
@@ -32,7 +32,7 @@ class EventController(
 		else -> eventDao.findAll()
 	}
 
-	@PostMapping("/event")
+	@PostMapping("/api/v1/event")
 	fun newEvent(
 		@RequestParam(name = "barberId") newBarberId: Int,
 		@RequestParam(name = "clientId") newClientId: Int,
@@ -57,7 +57,7 @@ class EventController(
 		}
 	}
 
-	@PatchMapping("/event")
+	@PatchMapping("/api/v1/event")
 	@ResponseBody
 	fun updateEvent(
 		@RequestParam eventId: Int,
@@ -81,7 +81,7 @@ class EventController(
 		)
 	}
 
-	@DeleteMapping("/event")
+	@DeleteMapping("/api/v1/event")
 	fun deleteEvent(
 		@RequestParam eventId: Int
 	) {

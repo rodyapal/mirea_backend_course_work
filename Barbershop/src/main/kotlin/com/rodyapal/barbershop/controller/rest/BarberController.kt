@@ -10,13 +10,13 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 
-@RestController("api/v1")
+@RestController
 class BarberController(
 	private val barberDao: BarberDao,
 	private val bsConnectionDao: BSConnectionDao,
 	private val serviceDao: ServiceDao
 ) {
-	@GetMapping("/barber")
+	@GetMapping("/api/v1/barber")
 	@ResponseBody
 	fun getBarber(
 		@RequestParam(required = false) id: Int?,
@@ -27,7 +27,7 @@ class BarberController(
 		else -> barberDao.findAll()
 	}
 
-	@PostMapping("/barber")
+	@PostMapping("/api/v1/barber")
 	@ResponseBody
 	fun newBarber(
 		@RequestParam(name = "name") newName: String,
@@ -49,7 +49,7 @@ class BarberController(
 		return barber
 	}
 
-	@PatchMapping("/barber")
+	@PatchMapping("/api/v1/barber")
 	@ResponseBody
 	fun updateBarber(
 		@RequestParam barberId: Int,
@@ -69,7 +69,7 @@ class BarberController(
 		)
 	}
 
-	@DeleteMapping("/barber")
+	@DeleteMapping("/api/v1/barber")
 	fun deleteBarber(
 		@RequestParam barberId: Int
 	) {

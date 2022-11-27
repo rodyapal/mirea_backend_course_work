@@ -7,11 +7,11 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 
-@RestController("/api/v1")
+@RestController
 class ClientController(
 	private val clientDao: ClientDao
 ) {
-	@GetMapping("/client")
+	@GetMapping("/api/v1/client")
 	@ResponseBody
 	fun getClient(
 		@RequestParam(required = false) id: Int?,
@@ -26,7 +26,7 @@ class ClientController(
 		else -> clientDao.findAll()
 	}
 
-	@PostMapping("/client")
+	@PostMapping("/api/v1/client")
 	@ResponseBody
 	fun newClient(
 		@RequestParam(name = "name") newName: String,
@@ -44,7 +44,7 @@ class ClientController(
 		return client
 	}
 
-	@PatchMapping("/client")
+	@PatchMapping("/api/v1/client")
 	@ResponseBody
 	fun updateClient(
 		@RequestParam clientId: Int,
@@ -68,7 +68,7 @@ class ClientController(
 		)
 	}
 
-	@DeleteMapping("/client")
+	@DeleteMapping("/api/v1/client")
 	fun deleteClient(
 		@RequestParam clientId: Int
 	) {

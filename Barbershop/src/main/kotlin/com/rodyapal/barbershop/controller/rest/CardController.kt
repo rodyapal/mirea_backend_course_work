@@ -7,18 +7,18 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 
-@RestController("/api/v1")
+@RestController
 class CardController(
 	private val cardDao: LoyaltyCardDao
 ) {
-	@GetMapping("/card")
+	@GetMapping("/api/v1/card")
 	@ResponseBody
 	fun getCards(
 		@RequestParam(required = false) cardId: Int?
 	): List<LoyaltyCard> = if (cardId != null) cardDao.findOne { cardId eq it.id }?.let { listOf(it) }
 		?: emptyList() else cardDao.findAll()
 
-	@PostMapping("/card")
+	@PostMapping("/api/v1/card")
 	@ResponseBody
 	fun newCard(
 		@RequestParam discount: Int
@@ -30,7 +30,7 @@ class CardController(
 		return card
 	}
 
-	@PatchMapping("/card")
+	@PatchMapping("/api/v1/card")
 	@ResponseBody
 	fun updateCard(
 		@RequestParam cardId: Int,
@@ -48,7 +48,7 @@ class CardController(
 		)
 	}
 
-	@DeleteMapping("/card")
+	@DeleteMapping("/api/v1/card")
 	fun deleteCard(
 		@RequestParam cardId: Int
 	) {

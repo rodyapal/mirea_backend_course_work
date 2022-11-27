@@ -10,12 +10,12 @@ import org.springframework.web.server.ResponseStatusException
 import java.sql.Timestamp
 import java.time.Instant
 
-@RestController("api/v1")
+@RestController
 class ReviewController(
 	private val reviewDao: ReviewDao,
 	private val clientDao: ClientDao
 ) {
-	@GetMapping("/review")
+	@GetMapping("/api/v1/review")
 	@ResponseBody
 	fun getReview(
 		@RequestParam(required = false) id: Int?,
@@ -26,7 +26,7 @@ class ReviewController(
 		else -> reviewDao.findAll()
 	}
 
-	@PostMapping("/review")
+	@PostMapping("/api/v1/review")
 	@ResponseBody
 	fun newReview(
 		@RequestParam(name = "authorId") authorId: Int,
@@ -49,7 +49,7 @@ class ReviewController(
 		}
 	}
 
-	@PatchMapping("/review")
+	@PatchMapping("/api/v1/review")
 	@ResponseBody
 	fun updateReview(
 		@RequestParam reviewId: Int,
@@ -67,7 +67,7 @@ class ReviewController(
 		)
 	}
 
-	@DeleteMapping("/review")
+	@DeleteMapping("/api/v1/review")
 	fun deleteReview(
 		@RequestParam reviewId: Int
 	) {
