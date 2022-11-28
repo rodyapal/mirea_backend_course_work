@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration
 import javax.sql.DataSource
 
 @Configuration
-class AppConfig {
+class DatabaseConfig {
 	@Bean
 	@Autowired
 	fun database(dataSource: DataSource): Database = Database.connectWithSpringSupport(dataSource)

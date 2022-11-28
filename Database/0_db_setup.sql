@@ -75,3 +75,7 @@ CREATE TABLE log_events (
 	FOREIGN KEY (id_client_log) 	REFERENCES clients(id_client) ON DELETE CASCADE ON UPDATE CASCADE,
 	PRIMARY KEY (id_event_log, id_service_log, id_barber_log, id_client_log)
 );
+
+CREATE TABLE api_keys (
+    `key` VARCHAR(128) NOT NULL PRIMARY KEY
+);

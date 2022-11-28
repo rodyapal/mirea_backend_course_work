@@ -1,3 +1,5 @@
+insert into api_keys (`key`) values ('default');
+
 insert into services (name, description, duration, price) values ('Trippledex', 'Future-proofed logistical open architecture', '48', '007');
 insert into services (name, description, duration, price) values ('Latlux', 'Open-source solution-oriented support', '7854', '5446');
 insert into services (name, description, duration, price) values ('Flexidy', 'Cloned composite standardization', '69', '941');
