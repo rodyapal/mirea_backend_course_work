@@ -23,7 +23,7 @@ class SecurityConfig {
 				AuthorizationDecision(
 					apiKeyService.keyExists(apiKey)
 				)
-			}
+			}.anyRequest().permitAll()
 		}
 		return httpSecurity.build()
 	}
