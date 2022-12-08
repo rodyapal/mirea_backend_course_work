@@ -1,5 +1,5 @@
 create function is_barber_service_connected(barber_id int, service_id int) returns boolean
-    not deterministic
+    reads sql data
 begin
     return exists(SELECT *
                   from barber_service
